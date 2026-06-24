@@ -1,0 +1,38 @@
+let slideindex=1;
+showslides(slideindex);
+
+//next or previous controls
+function plusSlides(n)
+{
+    showslides(slideindex+=n);
+}
+
+//Thumbnail image control
+function currentslide (n)
+{
+    showslides(slideindex=n);
+}
+
+function showslides(n)
+{
+    let i;
+    let slides= document.getElementsByClassname("mySlides");
+    let dots= document.getElementsByClassname("dot");
+    if(n > slides.length)
+    {
+        slideindex = 1
+    }
+    if(n<1)
+    {
+        slideindex=slides.length
+    }
+    for(i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for(i= 0; < dots.length; i++) {
+        dots[i].classname =dots[i].classname.replace("active", "");
+    }
+    slides[slideindex-1].style.display = "block";
+    dots[slidesIndex-1].classname += "active";
+}

@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**styling slide show here**/
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: pink;
+            
+        }
+
+        nav {
+            background-color: rgb(245, 247, 247);
+            box-shadow: 0, 2px 6px rgb(red, green, rgb(0, 0, 9));
+            position: sticky;
+            top: 0;
+            z-index: auto;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            height: 60px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .nav-links li {
+
+            position: relative;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .nav-links a :hover {
+            background-color: blue;
+            border-radius: 4px;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            background-color: rgb(244, 246, 246);
+            list-style: none;
+            min-width: 4px;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .submenu li a {
+            padding: 10px 15px;
+            color: tomato;
+        }
+
+        .submenu li a:hover {
+            background-color: blueviolet;
+        }
+
+        @media (min-width :769px) {
+            .nav-links li:hover>.submenu display: block;
+        }
+
+        /*hamburger menu*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: #03ec03;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: blue;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max height 0.3s ease-out;
+            }
+
+            .nav-links a:hover {
+                background-color: #334155;
+                border-radius: 4px;
+            }
+
+            .nav-links.open {
+                max-height: 500px;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .submenu {
+                position: static;
+                display: none;
+                background-color: cadetblue;
+            }
+
+            .submenu.open {
+                padding: 15px;
+            }
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+
+        }
+
+
+        .hamburger.active span :nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span :nth-child(3) {
+            transform: rotate(-45eg) translate(5px, -5px)
+        }
+
+
+
+
+
+        /*contact us page css*/
+        #fname,
+        #lname,
+        #subject {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            resize: vertical
+        }
+
+        #submit {
+            background-color: violet;
+            column-gap: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #fname:hover,
+        #lname:hover,
+        #ename:hover #subject:hover,
+        {
+        background-color: pink;
+        }
+
+
+        .container {
+            border-radius: 5px;
+            background-color: #e1b1b1;
+            padding: 20px;
+            margin: 10px 500px 100px 500px;
+        }
+
+        /*footer styling starts here!*/
+        footer {
+            background-color: rgb(210, 63, 124);
+            color: rgb(25, 22, 22);
+            padding: 60px 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo h2 {
+            font-size: 24px;
+            margin: 10px;
+            color: purple(6, 129, 237);
+        }
+
+        .footer-logo p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: aliceblue;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color:0.3s;
+        }
+
+        .footer-links ul li align-self: hover;
+
+            {
+            color: pink;
+        }
+
+        .footer.contact p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin-right: 10px;
+            color: tomato;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer-newsletter input [type="email"] {
+            padding: 10px;
+            width: 70px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .footer-newsletter button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #e1b1b1;
+            color: black;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer-newsletter button:hover
+        { 
+          background-color: aqua;
+        }
+
+        .footer-buttom 
+        {
+            background-color: black;
+            text-align: center;
+            padding: 15px;
+            font size: 13px;
+            color:red;
+        }
+
+        @media (max-width:768px ){
+            footer{
+                text-align: center;
+            }
+            .footer-newsletter input[type="email"]{
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }   
+            .footer-newsletter button {
+                width: 100%;
+                border-radius: 4px;
+            }  
+        }   
+               
+
+
+
+            
+
+
+
+
+
+
+
+
+
+         
+
+
